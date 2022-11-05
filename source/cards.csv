@@ -1,0 +1,4 @@
+cardNumber,iban,bin,cvv,cardType,pin
+1111,aaa,651,514,debit,225
+2222,aaa,651,514,debit,112
+3333,aaa,651,514,debit,112
