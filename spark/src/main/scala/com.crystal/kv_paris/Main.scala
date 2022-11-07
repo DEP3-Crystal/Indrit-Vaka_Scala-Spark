@@ -12,7 +12,6 @@ object Main extends App {
   val sc = SparkContext.getOrCreate(conf)
   val header = "car,price,body,mileage,engV,engType,registration,year,model,drive"
 
-
   sc.textFile(root + "/car_ads_*.csv")
 
     .filter(!_.contains(header))
