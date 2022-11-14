@@ -19,5 +19,3 @@ var result: String = amount match {
   case a => ("The amount is: " + a)
 }
 print(result)
-
-

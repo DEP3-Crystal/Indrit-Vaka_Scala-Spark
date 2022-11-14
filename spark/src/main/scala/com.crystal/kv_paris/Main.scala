@@ -17,7 +17,7 @@ object Main extends App {
     .filter(!_.contains(header))
     .filter(_.split(",").length >= 10)
     .map(DeserializeCar.deserialize)
-    .map(car=>new ToKVByEntry[String, Car](key=>key.car).convert(car))
+    .map(car=>new ToKVByEntry[String, Car](_.car).convert(car))
     .groupByKey()
     .map(kv=> {
       val key = kv._1
