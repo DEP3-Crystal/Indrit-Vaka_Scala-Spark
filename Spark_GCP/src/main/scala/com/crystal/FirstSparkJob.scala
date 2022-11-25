@@ -23,5 +23,6 @@ object FirstSparkJob {
     println("Spark config")
     spark.conf.getAll.foreach(println)
 
+
   }
 }

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# gcloud auth application-default login
+# gcloud auth login
+#gsutil cp gs://dataflow-jobs-irn-69659-dev-twt-loc/mapping/jars/pan-mapping-twt-location-LATEST.jar ./pan-mapping-twt-location-LATEST.jar
+cp ../pan-mapping-twt-location/target/pan-mapping-twt-location-2.0.0-jar-with-dependencies.jar ./pan-mapping-twt-location-LATEST.jar
+ARGS="--runner=DataflowRunner --configFile=gs://dataflow-jobs-irn-69659-dev-twt-loc/mapping/config/mappingJob.conf \
+--streaming=true --tempLocation=gs://dataflow-jobs-irn-69659-dev-twt-loc/mapping/temp --project=irn-69659-dev-938457410 --stagingLocation=gs://dataflow-jobs-irn-69659-dev-twt-loc/mapping/staging --region=europe-west1 --subnetwork=regions/europe-west1/subnetworks/ftt-default-subnet-01 --serviceAccount=sa-dataengineering-dataflow@irn-69659-dev-938457410.iam.gserviceaccount.com --maxNumWorkers=3 --usePublicIps=false --workerZone=europe-west1-d --enableStreamingEngine=true --workerMachineType=n1-standard-2 --diskSizeGb=30 --jobName=irn-71744-vat-ww-wwc-mapping-twt-loc-v2-0x-$(date +%Y-%m-%d-%H-%M-%S)"
+java -jar pan-mapping-twt-location-LATEST.jar ${ARGS}
+
+rm ./pan-mapping-twt-location-LATEST.jar
