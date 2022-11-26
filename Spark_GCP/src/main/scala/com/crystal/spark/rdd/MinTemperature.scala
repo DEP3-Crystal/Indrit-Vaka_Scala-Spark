@@ -1,4 +1,4 @@
-package com.crystal.spark
+package com.crystal.spark.rdd
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
@@ -18,7 +18,7 @@ object MinTemperature {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val sc = new SparkContext("local[*]", "Min temp")
 
-    val lines = sc.textFile(Path.sourcePath + "1800.csv")
+    val lines = sc.textFile(Path.u_dataPath + "1800.csv")
     //ITE00100554,18000101,TMAX,-75,,,E,
     lines.map(parseLine)
       .filter(_._2.equals("TMIN"))

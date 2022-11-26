@@ -1,4 +1,4 @@
-package com.crystal.spark
+package com.crystal.spark.rdd
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
@@ -8,7 +8,7 @@ object WordCount extends App {
 
   val sc = new SparkContext("local[*]","Word count")
 
-  val lines =sc.textFile(Path.sourcePath + "book.txt")
+  val lines =sc.textFile(Path.u_dataPath + "book.txt")
   lines.flatMap(_.split("\\W+"))
     .map(_.trim)
     .filter(_.nonEmpty)
