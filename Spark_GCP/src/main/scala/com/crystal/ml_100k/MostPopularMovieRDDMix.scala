@@ -26,6 +26,7 @@ object MostPopularMovieRDDMix {
           .add("movieId", IntegerType, nullable = true)
           .add("rating", ByteType, nullable = true)
           .add("timestamp", LongType, nullable = true)
+
     import spark.implicits._
     val moviesDs = spark.sparkContext
       .textFile(Path.u_dataPath + "ml-100k/u.data")
