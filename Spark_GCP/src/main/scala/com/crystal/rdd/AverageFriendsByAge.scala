@@ -1,4 +1,4 @@
-package com.crystal.spark.rdd
+package com.crystal.rdd
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark._

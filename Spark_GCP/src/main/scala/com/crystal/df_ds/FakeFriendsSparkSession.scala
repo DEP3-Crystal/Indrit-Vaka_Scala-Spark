@@ -1,6 +1,6 @@
-package com.crystal.spark.df_ds
+package com.crystal.df_ds
 
-import com.crystal.spark.rdd.Path
+import com.crystal.rdd.Path
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.{Dataset, SparkSession}
 

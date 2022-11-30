@@ -1,4 +1,4 @@
-package com.crystal.spark.df_ds
+package com.crystal.df_ds
 
 import org.apache.spark.sql.functions.col
 
