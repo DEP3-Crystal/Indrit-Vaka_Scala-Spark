@@ -32,7 +32,8 @@ view more [here](https://cloud.google.com/sdk/gcloud/)
 [view more](https://stackoverflow.com/questions/63041888/how-to-check-which-gcloud-project-is-active)
 
 # Copying a local jar to a bucket
-`gsutil cp "jar location" <bucket location like (gs://spark-scala-370309)>`
+`gsutil cp "jar location" <bucket location like (gs://indrit/word_count)>`
+
 [view more](https://cloud.google.com/storage/docs/gsutil/commands/cp)
 
 # Reading Data from a BigQuery Table
