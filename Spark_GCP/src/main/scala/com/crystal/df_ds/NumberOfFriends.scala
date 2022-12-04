@@ -19,7 +19,7 @@ object NumberOfFriends {
     println("Make everyone 10 years older: ")
     people.select(people("name"), (people("age") + 10).alias("age")).show()
     // another way
-    people.withColumn("newAge",col("age")+10).show()
+    people.withColumn("newAge", col("age") + 10).show()
     sparkSession.stop()
   }
 

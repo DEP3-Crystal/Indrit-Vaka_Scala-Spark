@@ -1,16 +1,20 @@
 # BigQuery Cost
+
 - Storage costs
 - Query costs
 - Free operations
 
 # Storage cost
+
 Storage cost deffer based on whether your data is:
-- active 
+
+- active
 - Long-term Data
+
 ## Active data
+
 Data modified on last 90 days are considered active data,
 and it cost more to store.
-
 
 | Active data                                     | Long-term Data                                                       |
 |-------------------------------------------------|----------------------------------------------------------------------|
@@ -19,12 +23,10 @@ and it cost more to store.
 | First 10GB is free                              | First 10GB is free                                                   |
 | When table is edited, pricing reverts to active | when a table is not edited, pricing automatically drops to long-term |
 
-
-
 # Query cost
+
 - On-demand
 - Flat-rate
-
 
 On demand, you pay based on usage.
 For flat-rate, you have predictable cost from one month to another.
@@ -35,8 +37,9 @@ For flat-rate, you have predictable cost from one month to another.
 | $5 per YB/month. First 1TB/month free | $40_000/month for 200 slots, $10_000 per 500 additional slots |
 
 # Free data
+
 - Loading data into BQ
-  - streaming insert is not free
+    - streaming insert is not free
 - Copying data
 - Exporting data
 - deleting dataset
@@ -44,18 +47,20 @@ For flat-rate, you have predictable cost from one month to another.
 - Metadata operations
 
 # Streaming inserts
+
 1 cent/200 MB
 Only successfully insert rows are charged
 
-
 # Minimizing Costs
+
 Query only columns you need
+
 - under the hood, bigQuery is columnar
 - each column stored separately in encrypted, replicated file
 
 Use table preview to explore data
-- Don't run queries just to explore
 
+- Don't run queries just to explore
 
 # Calculation Query Price
 

@@ -21,11 +21,11 @@ object MostPopularMovieRDDMix {
       .master("local[*]")
       .getOrCreate()
 
-        val schema = new StructType()
-          .add("userId", IntegerType, nullable = true)
-          .add("movieId", IntegerType, nullable = true)
-          .add("rating", ByteType, nullable = true)
-          .add("timestamp", LongType, nullable = true)
+    val schema = new StructType()
+      .add("userId", IntegerType, nullable = true)
+      .add("movieId", IntegerType, nullable = true)
+      .add("rating", ByteType, nullable = true)
+      .add("timestamp", LongType, nullable = true)
 
     import spark.implicits._
     val moviesDs = spark.sparkContext

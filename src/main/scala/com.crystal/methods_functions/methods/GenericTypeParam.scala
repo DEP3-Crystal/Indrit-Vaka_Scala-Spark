@@ -7,5 +7,6 @@ object GenericTypeParam extends App {
     val randomNumber: Int = util.Random.nextInt(list.length)
     list(randomNumber)
   }
+
   println(result)
 }

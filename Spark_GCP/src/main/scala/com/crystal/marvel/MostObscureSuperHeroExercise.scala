@@ -1,4 +1,5 @@
 package com.crystal.marvel
+
 import com.crystal.rdd.Path
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.functions._

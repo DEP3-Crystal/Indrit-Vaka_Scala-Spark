@@ -1,6 +1,6 @@
 
-var i =1;
-while(i <=10){
+var i = 1;
+while (i <= 10) {
   println(i)
-  i = i+1
+  i = i + 1
 }

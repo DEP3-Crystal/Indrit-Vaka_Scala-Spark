@@ -7,17 +7,15 @@ import scala.collection.mutable
 class DataAccessFromCsv extends DataAccess {
 
   val rootPath = "source";
-  val cardsPath = rootPath concat("/cards.csv")
-  val accountsPath = rootPath concat("/accounts.csv")
-  val userPath = rootPath concat("/users.csv")
+  val cardsPath = rootPath concat ("/cards.csv")
+  val accountsPath = rootPath concat ("/accounts.csv")
+  val userPath = rootPath concat ("/users.csv")
 
   override val cards: mutable.Map[String, Card] = loadCards
 
 
-
- lazy override val accounts: mutable.Map[String, Account] = ???
- lazy override val users: mutable.Map[Int, User] = ???
-
+  lazy override val accounts: mutable.Map[String, Account] = ???
+  lazy override val users: mutable.Map[Int, User] = ???
 
 
   override def getUsers: mutable.Map[Int, User] = ???
@@ -47,7 +45,7 @@ class DataAccessFromCsv extends DataAccess {
   def loadCards: mutable.Map[String, Card] = {
     val cardsBuffer = io.Source.fromFile(cardsPath)
     val lines = cardsBuffer.getLines()
-    lines.map(line=> {
+    lines.map(line => {
       val entries = line.split(",").map(_.trim)
       //cardNumber,iban,bin,cvv,cardType,pin
       val cardNumber = entries(0)
@@ -56,10 +54,9 @@ class DataAccessFromCsv extends DataAccess {
       val cvv = entries(3)
       val cardType = entries(4)
       val pin = entries(5)
-     cardNumber-> Card(cardNumber,iban,bin, cvv, cardType, pin)
+      cardNumber -> Card(cardNumber, iban, bin, cvv, cardType, pin)
     }) to mutable.Map
   }
-
 
 
 }

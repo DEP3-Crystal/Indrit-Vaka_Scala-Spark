@@ -6,6 +6,6 @@ package com.crystal.methods_functions
 //  }
 //
 //}
-object HelloApp extends App{
-    println("Hello world of Scala")
+object HelloApp extends App {
+  println("Hello world of Scala")
 }

@@ -1,7 +1,5 @@
 # Scala
 
-
-
 # Scala is statically typed
 
 Scala is a pure object-oriented language in the sense that every value is an object.

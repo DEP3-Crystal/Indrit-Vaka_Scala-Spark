@@ -1,6 +1,6 @@
 val number = 10
-val symbol1: String = if(number > 5){
+val symbol1: String = if (number > 5) {
   "> 5"
-}else{
+} else {
   "<=5"
 }

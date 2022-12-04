@@ -1,4 +1,5 @@
 # BigQuery
+
 - is a cloud data warehouse
 - standard SQL and ODBC/JDBC driers
 - serverless
@@ -8,23 +9,25 @@
 - Streaming and real-time analytics
 
 # Where BigQuery fits
+
 - pricing
 - Comparison to other GCP technologies
 
 # BigQuery Data Model
+
 - Datasets, tables and views
 - Partitioned tables
+
 # Advanced Analytical Queries
+
 - Nested and repeated fields
 - Aggregate and window operation
 
 # Programmatic Access
+
 - client programs, Datalab notebooks
 
-
-
 # Cloud SQL Vs BifQuery
-
 
 | BigQuery                       | Cloud SQL                            |
 |:-------------------------------|--------------------------------------|
@@ -35,7 +38,6 @@
 | No ACID or transaction support | String ACID and transaction support  |
 | SQL access                     | SQL access                           |
 | week schema enforcement        | String schema enforcement            |
-
 
 # BigQuery (SQL) Vs DataStore (NoSql)
 
@@ -48,10 +50,10 @@
 | Analytical queries | Hierarchical queries e.g. In XML     |
 | OLAP               | OLAP but has transaction support too |
 
-
 OLAP => Online analytic processing
 
 # Cost
+
 ![img.png](img.png)
 
 ![img_1.png](img_1.png)

@@ -10,9 +10,11 @@ object MinTemperature {
     val statusId = fields(0)
     val entryId = fields(2)
     val temperature = fields(3).toFloat * 0.1f * (7.0f / 5.0f) + 23.0f
-    (statusId,entryId,temperature)
+    (statusId, entryId, temperature)
   }
-4
+
+  4
+
   def main(args: Array[String]): Unit = {
 
     Logger.getLogger("org").setLevel(Level.ERROR)
@@ -22,11 +24,11 @@ object MinTemperature {
     //ITE00100554,18000101,TMAX,-75,,,E,
     lines.map(parseLine)
       .filter(_._2.equals("TMIN"))
-      .map(x=>(x._1, x._3))
-//      .min;
-      .reduceByKey((acc, newValue)=> Math.min(acc,newValue))
+      .map(x => (x._1, x._3))
+      //      .min;
+      .reduceByKey((acc, newValue) => Math.min(acc, newValue))
       .collect()
-      .foreach(res=>{
+      .foreach(res => {
         val station = res._1
         val temp = res._2
         val formattedTemp = f"$temp%.2f"

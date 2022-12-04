@@ -2,9 +2,9 @@ package com.crystal.df_ds
 
 import com.crystal.rdd.Path
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.{SparkSession, functions}
 import org.apache.spark.sql.functions.{col, lit, round, sum}
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.{SparkSession, functions}
 
 object TotalSpendByCustomer {
   case class Order(customerId: Int, productId: Int, cost: Double)
@@ -28,9 +28,9 @@ object TotalSpendByCustomer {
       .as[Order]
 
     ordersDS.groupBy("customerId")
-      .agg(functions.concat(round(sum("cost"),2),lit(" $").alias("total_spends")))
-//      .sum("cost")
-//      .select(col("customerId"), col("total_spends").alias("total_spends"))
+      .agg(functions.concat(round(sum("cost"), 2), lit(" $").alias("total_spends")))
+      //      .sum("cost")
+      //      .select(col("customerId"), col("total_spends").alias("total_spends"))
       .sort(col("total_spends").desc)
       .show()
   }

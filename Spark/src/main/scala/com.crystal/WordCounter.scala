@@ -6,7 +6,7 @@ object WordCounter {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
       .setMaster("local[*]") //* is number of cores
-      .setAppName("Word Counter").set("spark.speculation","false")
+      .setAppName("Word Counter").set("spark.speculation", "false")
 
     val sc: SparkContext = SparkContext.getOrCreate(conf)
 
@@ -29,9 +29,9 @@ object WordCounter {
 
   def containsNonWord(word: String) = {
     val pattern = raw"\\W".r
-//    word.matches("\\W")
+    //    word.matches("\\W")
     word match {
-      case pattern()=> true
+      case pattern() => true
       case _ => false
     }
   }

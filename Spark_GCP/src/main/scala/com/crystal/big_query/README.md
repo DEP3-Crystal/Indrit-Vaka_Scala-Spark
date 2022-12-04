@@ -28,10 +28,12 @@ more info [here](https://cloud.google.com/sdk/gcloud/reference/projects/list)
 view more [here](https://cloud.google.com/sdk/gcloud/)
 
 # Check project we are using
+
 `gcloud config get-value project`
 [view more](https://stackoverflow.com/questions/63041888/how-to-check-which-gcloud-project-is-active)
 
 # Copying a local jar to a bucket
+
 `gsutil cp "jar location" <bucket location like (gs://indrit/word_count)>`
 
 [view more](https://cloud.google.com/storage/docs/gsutil/commands/cp)
@@ -94,18 +96,22 @@ A second option is to use the Query option in the following way:
 
 ```df = spark.read.format("bigquery").option("query", sql).load()```
 
-
-he execution is faster as only the result is transmitted over the wire. In a similar way, the queries can include JOINs more efficiently than running joins on Spark or use other BigQuery features such as Subqueries, BigQuery User-defined Functions, Wildcard Tables, BigQuery ML, etc.
+he execution is faster as only the result is transmitted over the wire. In a similar way, the queries can include JOINs
+more efficiently than running joins on Spark or use other BigQuery features such as Subqueries, BigQuery User-defined
+Functions, Wildcard Tables, BigQuery ML, etc.
 
 In order to use this feature the following configurations MUST be set:
 
 “viewsEnabled” must be set to true.
-“materializationDataset” must be set to a dataset where the GCP user has table creation permission. “materializationProject” is optional.
-Fur further information on reading data from BigQuery query, visit [here](https://github.com/GoogleCloudDataproc/spark-bigquery-connector#reading-data-from-a-bigquery-query).
-
+“materializationDataset” must be set to a dataset where the GCP user has table creation permission.
+“materializationProject” is optional.
+Fur further information on reading data from BigQuery query,
+visit [here](https://github.com/GoogleCloudDataproc/spark-bigquery-connector#reading-data-from-a-bigquery-query).
 
 # Writing Data to BigQuery
+
 view more [here](https://hevodata.com/learn/spark-bigquery-connector/#step4)
+
 ```
 df.writeStream
 .format("bigquery")
@@ -114,25 +120,29 @@ df.writeStream
 .option("table", "dataset.table")
 ```
 
-
 # Submitting job
 
 [gcloud dataproc jobs submit spark](https://cloud.google.com/sdk/gcloud/reference/dataproc/jobs/submit/spark#--jars)
 
 EXAMPLES
 To submit a Spark job that runs the main class of a jar, run:
+
 ```
 gcloud dataproc jobs submit spark --cluster=my-cluster --region=us-central1 --jar=my_jar.jar -- arg1 arg2
 ```
+
 To submit a Spark job that runs a specific class of a jar, run:
+
 ```
 gcloud dataproc jobs submit spark --cluster=my-cluster --region=us-central1 --class=org.my.main.Class --jars=my_jar1.jar,my_jar2.jar -- arg1 arg2
 ```
+
 To submit a Spark job that runs a jar that is already on the cluster, run:
+
 ```
 gcloud dataproc jobs submit spark --cluster=my-cluster --region=us-central1 --class=org.apache.spark.examples.SparkPi --jars=file:///usr/lib/spark/examples/jars/spark-examples.jar -- 1000
 ```
-[View more ](https://cloud.google.com/sdk/gcloud/reference/dataproc/jobs/submit/spark#--jars)
 
+[View more ](https://cloud.google.com/sdk/gcloud/reference/dataproc/jobs/submit/spark#--jars)
 
 # [Running the code EX](https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example#running_the_code)

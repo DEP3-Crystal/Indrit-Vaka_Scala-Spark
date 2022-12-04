@@ -17,6 +17,7 @@ class DataAccessFromMemory extends DataAccess {
   override def getCard(cardNumber: String): Option[Card] = cards.values.find(_.cardNumber.equals(cardNumber))
 
   override def addCard(card: Card): Unit = cards.addOne(card.cardNumber -> card)
+
   override def addCards(card: mutable.Map[String, Card]): Unit = cards.addAll(cards)
 
 
@@ -25,7 +26,8 @@ class DataAccessFromMemory extends DataAccess {
   override def getAccounts: mutable.Map[String, Account] = accounts
 
   override def addAccount(account: Account): Unit = accounts.addOne(account.iban -> account)
-  override def addAccounts(accounts: mutable.Map[String,Account]): Unit = accounts.addAll(accounts)
+
+  override def addAccounts(accounts: mutable.Map[String, Account]): Unit = accounts.addAll(accounts)
 
 
   override def getUsers: mutable.Map[Int, User] = users

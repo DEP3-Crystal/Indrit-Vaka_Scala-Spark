@@ -60,20 +60,21 @@ So to solve a big data problem by throwing it against big processing power,
 - Stands for resilient distributed Dataset.
 - Immutable
 - DAG
-  - Source
-  - Transformation
-    - Map
-    - filter
-    - ...
-  - Sink
+    - Source
+    - Transformation
+        - Map
+        - filter
+        - ...
+    - Sink
 
 all the transformation are lazy
 the actions will trigger the computation
+
 - actions
-  - collect
-  - count
-  - reduce
-  - ...
+    - collect
+    - count
+    - reduce
+    - ...
 
 Those actions will trigger the DAG execution and result in some final action against the data
 We can think of it as a collection,similar to list or an array.

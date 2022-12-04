@@ -37,9 +37,9 @@ object PopularMoviesBroadcast {
 
     val movieCounts = moviesDs.groupBy("movieId").count()
 
-    val lookupName :Int => String = (movieId:Int) =>{
+    val lookupName: Int => String = (movieId: Int) => {
       nameDic.value(movieId)
-     }
+    }
 
 
     val lookupNameUDF = udf(lookupName)

@@ -22,8 +22,8 @@ object AverageFriendsByAge {
     lines.map(parseLine)
       .mapValues(x => (x, 1))
       .reduceByKey((accumulatedValue, newValue) => (accumulatedValue._1 + newValue._1, accumulatedValue._2 + newValue._2))
-      .mapValues(x=> x._1/x._2)
-      .collect().sortWith(_._2>_._2)
+      .mapValues(x => x._1 / x._2)
+      .collect().sortWith(_._2 > _._2)
       .foreach(println)
 
   }

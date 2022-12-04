@@ -1,3 +1,3 @@
-val kv = "key" ->4
-val topple = ("key","value")
+val kv = "key" -> 4
+val topple = ("key", "value")
 

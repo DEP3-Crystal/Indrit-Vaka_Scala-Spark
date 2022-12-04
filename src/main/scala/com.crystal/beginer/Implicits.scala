@@ -12,10 +12,11 @@ object Implicits extends App {
       case "CAD" => Currency("CAD", amountAsDouble, amountAsDouble * (1 / 1.30))
     }
   }
+
   println(stringToCurrency("USD 200"))
   println(stringToCurrency("NZD 200"))
   val cad: Currency = "CAD 200"
   println(cad)
-  
-  
+
+
 }

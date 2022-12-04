@@ -2,9 +2,12 @@ object Currency {
   private val conversionTable: Map[String, Double] = Map("CAD" -> 1 / 1.30, "NZD" -> 1 / 1.50)
 
   def apply(code: String, amount: Double): Currency = new Currency(code, amount)
-  def createUSD(amount:Double) = new Currency("USD",amount)
-  def createCAD(amount:Double) = new Currency("CAD",amount)
-  def createNZD(amount:Double) = new Currency("NZD",amount)
+
+  def createUSD(amount: Double) = new Currency("USD", amount)
+
+  def createCAD(amount: Double) = new Currency("CAD", amount)
+
+  def createNZD(amount: Double) = new Currency("NZD", amount)
 }
 
 class Currency(code: String, amount: Double) {
@@ -38,9 +41,9 @@ object CurrencyRunner extends App {
 
   import Currency._
 
-  val usd2 =createUSD(100.12)
-  val cad2 =createCAD(100.12)
-  val nzd2 =createNZD(100.12)
+  val usd2 = createUSD(100.12)
+  val cad2 = createCAD(100.12)
+  val nzd2 = createNZD(100.12)
   println(usd2)
   println(cad2)
   println(nzd2)

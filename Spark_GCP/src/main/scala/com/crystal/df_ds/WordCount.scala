@@ -19,10 +19,10 @@ object WordCount {
     //Read each line of my book on DataSet
     import spark.implicits._
     val input = spark.read
-    .text(Path.u_dataPath + "book.txt").as[Book]
+      .text(Path.u_dataPath + "book.txt").as[Book]
 
     //Split using regular expression that extracts words
-    val word =input.select(explode(split($"value","\\W+")).alias("word"))
+    val word = input.select(explode(split($"value", "\\W+")).alias("word"))
       .filter($"word" =!= "")
 
     // Normalize everything to lowercase

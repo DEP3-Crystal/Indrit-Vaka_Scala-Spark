@@ -6,7 +6,7 @@ object SparkBroadcastVariable {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder()
       .appName("Spark Broadcast variable example")
-//      .master("local[*]")
+      //      .master("local[*]")
       .getOrCreate()
 
     val users = spark.sparkContext.textFile(args(0))

@@ -37,10 +37,10 @@ object MostPopularHeroes {
       .sort($"connections".desc)
       .first()
 
-   val mostPopularName = names
-     .filter( $"id" === mostPopular(0))
-     .select("name")
-     .first()
+    val mostPopularName = names
+      .filter($"id" === mostPopular(0))
+      .select("name")
+      .first()
 
     println(s"${mostPopularName(0)} is most popular hero with ${mostPopular(1)} co-appearance")
 

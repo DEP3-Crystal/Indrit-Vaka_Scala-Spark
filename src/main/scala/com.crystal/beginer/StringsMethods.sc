@@ -1,4 +1,4 @@
-val s="hello"
+val s = "hello"
 
 s.toUpperCase
 

@@ -35,8 +35,8 @@ for (i <- 1 to 8) {
 
 val testList: List[Matchable] = List(5, "gn", 54.55)
 
-for(i <- 1 to 20){
-  if(i%3==0)
+for (i <- 1 to 20) {
+  if (i % 3 == 0)
     println(i)
 }
 

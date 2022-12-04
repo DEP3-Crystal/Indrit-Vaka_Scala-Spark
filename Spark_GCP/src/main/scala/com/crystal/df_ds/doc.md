@@ -41,27 +41,31 @@ and deal with it just like it is a database
 ```scala worksheet
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.udf
+
 val sparkSession = SparkSession.builder()
-        .master("local[*]")
-        .appName("UDF")
-        .getOrCreate()
+  .master("local[*]")
+  .appName("UDF")
+  .getOrCreate()
 val dataFrame = sparkSession.read.csv("")
 val square = udf { x => x * x }; // declaring the UDF
 val squareDF = dataFrame.withColumn("square", square("value")) // Using UDF
 ```
 
 ## Dataset work best with structured data
+
 # Word Count with DataFrames
+
 - Using datasets with this unstructured text data isn't a great fit
-- Our initial DataFrame will just have row objects with a column named 
-"value" for each line of text
+- Our initial DataFrame will just have row objects with a column named
+  "value" for each line of text
 - This is a case where RDD's would be more straightforward
 
 # Using SQL Functions
+
 - explode - similar to flatmap, explodes columns into rows
 - split()
 - lower()
 - passing column names as parameters
-  - split( $"value", "\\W++")
-  - filter($"colName" =!= "")
-    - note that we can use =!= for not equal and === for equal
+    - split( $"value", "\\W++")
+    - filter($"colName" =!= "")
+        - note that we can use =!= for not equal and === for equal

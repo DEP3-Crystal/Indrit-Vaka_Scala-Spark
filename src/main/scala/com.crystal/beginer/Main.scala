@@ -13,9 +13,11 @@ object Main {
   }
 
 }
+
 object Utils {
- private val cadToUsd: Double = 1/1.30
-  private val nzdToUsd: Double = 1/1.50
+  private val cadToUsd: Double = 1 / 1.30
+  private val nzdToUsd: Double = 1 / 1.50
+
   def getRateFrom(code: String): Double = {
     println("getting rate from: " + code)
     code match {

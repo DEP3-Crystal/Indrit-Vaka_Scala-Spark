@@ -47,7 +47,7 @@ object MostPopularMovieUsingJoin {
       .as[Movie]
 
     movieRD.join(moviesRatingDs, "movieId")
-      .groupBy("movieId","name","release")
+      .groupBy("movieId", "name", "release")
       .count()
       .orderBy(desc("count"))
       .show()

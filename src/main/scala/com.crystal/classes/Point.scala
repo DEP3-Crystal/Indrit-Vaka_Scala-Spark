@@ -4,7 +4,7 @@ import scala.collection.mutable.ArrayBuffer
 
 
 class Point(val x: Int, val y: Int) {
-  val constructor =new Point(5, 2)
+  val constructor = new Point(5, 2)
   //  constructor.x = 5;
 
 }

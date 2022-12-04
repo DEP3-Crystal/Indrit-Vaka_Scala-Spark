@@ -1,8 +1,5 @@
 
 
-import com.google.cloud.spark.bigquery.repackaged.com.google.auth.oauth2.GoogleCredentials
-import com.google.cloud.spark.bigquery.repackaged.com.google.cloud.bigquery.{BigQueryOptions, JobId, JobInfo, QueryJobConfiguration}
-
 import java.io.FileInputStream
 import java.util.UUID
 
@@ -38,7 +35,6 @@ object Main {
     val result = queryJob.getQueryResults()
 
     // Print all pages of the results.
-    import scala.collection.JavaConversions._
     for (row <- result.iterateAll) { // String type
       val commit = row.get("commit").getStringValue
       // Record type

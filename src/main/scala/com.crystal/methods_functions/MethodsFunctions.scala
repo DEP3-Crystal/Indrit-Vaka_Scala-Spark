@@ -1,6 +1,6 @@
 package com.crystal.methods_functions
 
-object MethodsFunctions extends App{
+object MethodsFunctions extends App {
   // console codes
   // Dissamble the class
   // cd target...

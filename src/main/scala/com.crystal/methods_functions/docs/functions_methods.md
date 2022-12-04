@@ -113,6 +113,7 @@ High order functions are function which have other functions
 as argument or functions that return other functions
 
 # Curried function
+
 A curried function has multiple args list - this is equivalent
 to multiple function invocations back. The first function accepts
 2 args, the second function accepts one.

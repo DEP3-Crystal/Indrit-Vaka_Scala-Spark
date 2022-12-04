@@ -4,7 +4,7 @@ amount match {
   case 100 => println("$100")
   case _ => println("not pattern match")
 }
- amount match {
+amount match {
 
   case a if a == 50 => print("bill is == 50")
   case a if a == 100 => print("bill is == 100")

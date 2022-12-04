@@ -8,16 +8,18 @@ import java.time.LocalDate
 import scala.collection.mutable
 
 object DataAccessFromMemoryTest extends App {
-  def fromMemory(): Unit ={
+  def fromMemory(): Unit = {
 
-  val dataAccess: DataAccess = new DataAccessFromMemory
-  val dataAccessService = new DataAccessService(dataAccess)
-  dataAccessService.addUser(User(3, "ascsa", "asaasc", LocalDate.now, "asca", "sadcdas", null, mutable.Map.empty))
-  dataAccessService.getUsers.foreach(println)
-  dataAccessService.getUsers.foreach(println)
+    val dataAccess: DataAccess = new DataAccessFromMemory
+    val dataAccessService = new DataAccessService(dataAccess)
+    dataAccessService.addUser(User(3, "ascsa", "asaasc", LocalDate.now, "asca", "sadcdas", null, mutable.Map.empty))
+    dataAccessService.getUsers.foreach(println)
+    dataAccessService.getUsers.foreach(println)
   }
+
   fromCsv
-  def fromCsv: Unit ={
+
+  def fromCsv: Unit = {
     val dataAccess: DataAccess = new DataAccessFromCsv
     val dataAccessService = new DataAccessService(dataAccess)
     dataAccessService.getCards.foreach(println)
