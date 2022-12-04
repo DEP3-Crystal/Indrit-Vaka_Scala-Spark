@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.crystal</groupId>
+    <artifactId>Indrit-Vaka_Scala-Spark</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--Scala-->
+        <scala.compat.version>2.11</scala.compat.version>
+        <scala.version>${scala.compat.version}.12</scala.version>
+        <scala.maven.plugin>3.2.1</scala.maven.plugin>
+        <!--Apache Spark-->
+        <spark.version>2.4.8</spark.version>
+        <spark-csv.version>1.5.0</spark-csv.version>
+        <spark-xml.version>0.4.1</spark-xml.version>
+        <spark-avro.version>4.0.0</spark-avro.version>
+        <spark-excel.version>0.13.1</spark-excel.version>
+        <spark.bigquery.version>0.11.0-beta</spark.bigquery.version>
+    </properties>
+    <modules>
+        <module>Atm</module>
+        <module>BigQuery</module>
+        <module>ClassesObjects</module>
+        <module>Spark</module>
+        <module>Spark_GCP</module>
+    </modules>
+    <dependencies>
+        <!-- scala -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+
+        <!-- spark -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

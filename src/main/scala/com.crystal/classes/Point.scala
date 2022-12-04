@@ -4,8 +4,8 @@ import scala.collection.mutable.ArrayBuffer
 
 
 class Point(val x: Int, val y: Int) {
-  val constructor = Point(5, 2)
-//  constructor.x = 5;
+  val constructor =new Point(5, 2)
+  //  constructor.x = 5;
 
 }
 
@@ -18,10 +18,10 @@ class Cat(val name: String) extends Pet
 
 class Dog(val name: String) extends Pet
 
-val dog = Dog("Harry")
-val cat = Cat("Sally")
-object StartUp extends App {
 
+object StartUp extends App {
+  val dog = new Dog("Harry")
+  val cat = new Cat("Sally")
 
   val animals = ArrayBuffer.empty[Pet]
   animals.append(dog)
