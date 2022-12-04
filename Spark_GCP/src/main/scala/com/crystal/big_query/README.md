@@ -71,7 +71,7 @@ The Spark BigQuery Connector lets you execute any Standard SQL SELECT query
 on BigQuery and have the results sent directly to a Spark Dataframe.
 This is simple to accomplish, as demonstrated by the following code sample:
 
-```
+```scala worksheet
 spark.conf.set("viewsEnabled","true")
 spark.conf.set("materializationDataset","<dataset>")
 
@@ -112,7 +112,7 @@ visit [here](https://github.com/GoogleCloudDataproc/spark-bigquery-connector#rea
 
 view more [here](https://hevodata.com/learn/spark-bigquery-connector/#step4)
 
-```
+```scala worksheet
 df.writeStream
 .format("bigquery")
 .option("temporaryGcsBucket","some-bucket")
